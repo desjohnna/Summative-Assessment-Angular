@@ -1,1 +1,20 @@
-<p>list works!</p>
+<!-- <input [(ngModel)]="newMovieText" class="form-control" placeholder="Add Movie">
+<button (click)="onAddNewMovie(newMovieText)" class="btn btn-success">Add Movie</button> -->
+
+<ul *ngIf="displayMoviesList" class="list-group">
+    <li *ngFor="let m of movies; let i = index" class="list-group-item">
+        <p *ngIf="!movieIdsBeingEdited[i]">{{ m.title }}</p>
+        <button *ngIf="!movieIdsBeingEdited[i]" (click)="onStartEditMovie(i)" class="btn btn-warning">Edit</button>
+        <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m">
+        <button *ngIf="movieIdsBeingEdited[i]" (click)="onSaveEditMovie(i)" class="btn btn-success">Save</button>
+        <button *ngIf="!movieIdsBeingEdited[i]" class="btn btn-info float-right mx-1"
+            (click)="onViewMovieDetails(m)">View</button>
+
+        <button (click)="onDeleteMovie(i)" class="btn btn-danger">Delete</button>
+    </li>
+</ul>
+
+<p>{{movies.length}} Movies</p>
+<button class="btn btn-info" (click)="onToggleDisplay()">Hide/Show List</button>
+<!-- CHECK THIS NEW CODE, if working put code for movie cards in here-->
+<!-- <textarea [(ngModel)]="moviesBeingDisplayed.title"></textarea> -->

@@ -3,3 +3,7 @@
     text-emphasis: bolder;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
+
+.btn {
+    margin: 20px;
+}
