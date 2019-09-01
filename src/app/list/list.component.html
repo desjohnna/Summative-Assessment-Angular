@@ -1,28 +1,94 @@
-<!-- <input [(ngModel)]="newMovieText" class="form-control" placeholder="Add Movie">
-<button (click)="onAddNewMovie(newMovieText)" class="btn btn-success">Add Movie</button> -->
-
-<ul *ngIf="displayMoviesList" class="list-group">
-    <li *ngFor="let m of movies; let i = index" class="list-group-item">
-
-
-        <p *ngIf="!movieIdsBeingEdited[i]">{{ m.title }}</p>
-        <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m.title">
-
-        <button *ngIf="!movieIdsBeingEdited[i]" (click)="onStartEditMovie(i)" class="btn btn-warning">Edit</button>
-
-
-
-
-
-        <button *ngIf="movieIdsBeingEdited[i]" (click)="onSaveEditMovie(i)" class="btn btn-success">Save</button>
-        <button *ngIf="!movieIdsBeingEdited[i]" class="btn btn-info float-right mx-1"
-            (click)="onViewMovieDetails(m)">View</button>
-
-        <button (click)="onDeleteMovie(i)" class="btn btn-danger">Delete</button>
-    </li>
-</ul>
-
-<p>{{movies.length}} Movies</p>
+<!-- THIS DISPLAYS RIGHT AFTER ADD MOVIE BUTTON -->
 <button class="btn btn-info" (click)="onToggleDisplay()">Hide/Show List</button>
-<!-- CHECK THIS NEW CODE, if working put code for movie cards in here-->
-<!-- <textarea [(ngModel)]="moviesBeingDisplayed.title"></textarea> -->
+<br>
+<div class="row">
+    <ul *ngIf="displayMoviesList" class="list-group col s6">
+        <li *ngFor="let m of movies; let i = index" class="list-group-item">
+
+            <!-- AFTER CLICKING EDIT THIS IS WHAT SHOWS -->
+            <h4 *ngIf="!movieIdsBeingEdited[i]">{{ m.title }}</h4>
+            <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m.imageUrl">
+            <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m.title">
+            <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m.description">
+
+
+
+            <!-- BUTTONS -->
+            <button *ngIf="!movieIdsBeingEdited[i]" (click)="onStartEditMovie(i)"
+                class="btn waves-effect waves-light btn-small">Edit<i class="material-icons left">edit</i></button>
+
+
+            <button *ngIf="movieIdsBeingEdited[i]" (click)="onSaveEditMovie(i)"
+                class="btn waves-effect waves-light btn-small">Save<i class="material-icons left">save</i></button>
+
+
+
+            <button *ngIf="!movieIdsBeingEdited[i]" class="btn waves-effect waves-light btn-small"
+                (click)="onViewMovieDetails(m)">View<i class="material-icons left">open_in_new</i></button>
+
+
+            <button (click)="onDeleteMovie(i)" class="btn waves-effect waves-light #b71c1c red darken-4 btn-small">Delete<i class="material-icons left">delete</i></button>
+
+
+        </li>
+    </ul>
+
+    <!-- MOVIE CARD BOX  -->
+
+    <div class="col s6" *ngIf="moviesBeingDisplayed">
+        <div *ngIf="moviesBeingDisplayed">
+            <div class="row">
+                <div class="col s12">
+
+                    <!-- CARD STARTS HERE -->
+
+
+                    <div class="card card-panel hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="{{ moviesBeingDisplayed.imageUrl }}">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title  grey-text text-darken-4">{{ moviesBeingDisplayed.title }}</span>
+
+                            <button class="btn waves-effect waves-light activator" type="submit">Description<i class="material-icons left">local_movies</i>
+                                  </button>
+
+
+                            <!-- <p><a href="#" class="activator">Movie Description</a></p> -->
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">{{ moviesBeingDisplayed.title }}<i
+                                    class="material-icons right">close</i></span>
+                            <p>{{ moviesBeingDisplayed.description }}
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!-- CARD ENDS HERE -->
+
+                    <!-- <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/office.jpg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
+                            <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                            <p>Here is some more information about this product that is only revealed once clicked on.
+                            </p>
+                        </div>
+                    </div> -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
