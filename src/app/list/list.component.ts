@@ -8,8 +8,6 @@ import { Movie, MovieService } from '../movie.service';
 })
 export class ListComponent implements OnInit {
 movies: Movie[] = [];
-
-
 displayMoviesList: boolean = true;
 newMovieText: string = '';
 movieIdsBeingEdited = {};

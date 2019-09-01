@@ -43,6 +43,11 @@ export class MovieService {
     this.movies.splice(movie, 1)
   }
 
+  editMovie(movie) {
+    this.editMovie(movie)
+    console.log(movie)
+  }
+
 }
 
 
