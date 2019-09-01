@@ -12,7 +12,7 @@ export class AddMovieComponent implements OnInit {
 
   newMovieText = '';
   addMovieForm = new FormGroup({
-    image: new FormControl(''),
+    imageUrl: new FormControl(''),
     title: new FormControl(''),
     description: new FormControl('')
   })
