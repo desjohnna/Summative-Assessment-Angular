@@ -1,4 +1,4 @@
-<!-- THIS DISPLAYS RIGHT AFTER ADD MOVIE BUTTON -->
+<!-- THIS DISPLAYS RIGHT BELOW ADD MOVIE BUTTON -->
 <button class="btn btn-info" (click)="onToggleDisplay()">Hide/Show List</button>
 <br>
 <div class="row">
@@ -27,7 +27,9 @@
                 (click)="onViewMovieDetails(m)">View<i class="material-icons left">open_in_new</i></button>
 
 
-            <button (click)="onDeleteMovie(i)" class="btn waves-effect waves-light #b71c1c red darken-4 btn-small">Delete<i class="material-icons left">delete</i></button>
+            <button (click)="onDeleteMovie(i)"
+                class="btn waves-effect waves-light #b71c1c red darken-4 btn-small">Delete<i
+                    class="material-icons left">delete</i></button>
 
 
         </li>
@@ -50,11 +52,11 @@
                         <div class="card-content">
                             <span class="card-title  grey-text text-darken-4">{{ moviesBeingDisplayed.title }}</span>
 
-                            <button class="btn waves-effect waves-light activator" type="submit">Description<i class="material-icons left">local_movies</i>
-                                  </button>
+                            <button class="btn waves-effect waves-light activator pulse" type="submit">Movie Description<i class="material-icons left">local_movies</i>
+                            </button>
 
+                            <!-- THIS IS WHAT DISPLAYS AFTER DESCRIPTION BUTTON IS CLICKED -->
 
-                            <!-- <p><a href="#" class="activator">Movie Description</a></p> -->
                         </div>
                         <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4">{{ moviesBeingDisplayed.title }}<i
@@ -63,30 +65,6 @@
                             </p>
                         </div>
                     </div>
-
-
-                    <!-- CARD ENDS HERE -->
-
-                    <!-- <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="images/office.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Card Title<i
-                                    class="material-icons right">more_vert</i></span>
-                            <p><a href="#">This is a link</a></p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Card Title<i
-                                    class="material-icons right">close</i></span>
-                            <p>Here is some more information about this product that is only revealed once clicked on.
-                            </p>
-                        </div>
-                    </div> -->
-
-
-
-
                 </div>
             </div>
         </div>
