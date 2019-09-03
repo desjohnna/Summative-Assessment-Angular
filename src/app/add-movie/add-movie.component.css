@@ -1,0 +1,8 @@
+h6 {
+    color: #222222;
+    font-weight: 400;
+}
+
+#addMovieBtn, #listBtn {
+    background-color: #1C3144;
+}

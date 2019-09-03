@@ -1,0 +1,33 @@
+/* .card-content {
+    background: transparent;
+    z-index: 0;
+} */
+
+.material-icons {
+    z-index: 10;
+}
+
+.card-content {
+    padding: 0;
+}
+
+#editBtn {
+    background-color: #397367;
+}
+
+#deleteBtn {
+    background-color: #C6878F;
+}
+
+#viewBtn {
+    background-color: #52A7A6;
+}
+
+h4 {
+    font-family: Broadway;
+    color: #333333;
+}
+
+#listBtn {
+    background-color: #1C3144;
+}

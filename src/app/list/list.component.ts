@@ -17,10 +17,24 @@ moviesBeingDisplayed: Movie;
 
   ngOnInit() {
     this.getMovies();
+
+    // DISPLAYING THE LIST BUTTON TEXT AS HIDE LIST WHEN THE PAGE INITIALLY LOADS
+    document.getElementById("listBtn").innerText = `Hide List`
   }
+
+  
 
   onToggleDisplay() {
     this.displayMoviesList = !this.displayMoviesList;
+    
+    // IF STATEMENT TO CHANGE LIST BUTTON TEXT 
+    if(this.displayMoviesList) {
+      document.getElementById("listBtn").innerText = `Hide List`
+
+    } else if (!this.displayMoviesList) {
+      document.getElementById("listBtn").innerText = `Show List`
+
+    }
   } 
 
   onDeleteMovie(i: number) {

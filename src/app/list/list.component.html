@@ -1,5 +1,5 @@
 <!-- THIS DISPLAYS RIGHT BELOW ADD MOVIE BUTTON -->
-<button class="btn btn-info" (click)="onToggleDisplay()">Hide/Show List</button>
+<button id="listBtn" class="btn btn-info" (click)="onToggleDisplay()"></button>
 <br>
 <div class="row">
     <ul *ngIf="displayMoviesList" class="list-group col s6">
@@ -9,13 +9,14 @@
             <h4 *ngIf="!movieIdsBeingEdited[i]">{{ m.title }}</h4>
             <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m.imageUrl">
             <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m.title">
-            <input *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m.description">
+            <textarea *ngIf="movieIdsBeingEdited[i]" [(ngModel)]="m.description"></textarea>
 
 
 
             <!-- BUTTONS -->
             <button *ngIf="!movieIdsBeingEdited[i]" (click)="onStartEditMovie(i)"
-                class="btn waves-effect waves-light btn-small">Edit<i class="material-icons left">edit</i></button>
+                class="btn waves-effect waves-light btn-small" id="editBtn">Edit<i
+                    class="material-icons left">edit</i></button>
 
 
             <button *ngIf="movieIdsBeingEdited[i]" (click)="onSaveEditMovie(i)"
@@ -23,13 +24,11 @@
 
 
 
-            <button *ngIf="!movieIdsBeingEdited[i]" class="btn waves-effect waves-light btn-small"
+            <button *ngIf="!movieIdsBeingEdited[i]" id="viewBtn" class="btn waves-effect waves-light btn-small" 
                 (click)="onViewMovieDetails(m)">View<i class="material-icons left">open_in_new</i></button>
 
-
-            <button (click)="onDeleteMovie(i)"
-                class="btn waves-effect waves-light #b71c1c red darken-4 btn-small">Delete<i
-                    class="material-icons left">delete</i></button>
+            <button (click)="onDeleteMovie(i)" class="btn waves-effect waves-light #b71c1c darken-4 btn-small"
+                id="deleteBtn">Delete<i class="material-icons left">delete</i></button>
 
 
         </li>
@@ -39,34 +38,41 @@
 
     <div class="col s6" *ngIf="moviesBeingDisplayed">
         <div *ngIf="moviesBeingDisplayed">
+
+
             <div class="row">
                 <div class="col s12">
 
                     <!-- CARD STARTS HERE -->
 
-
                     <div class="card card-panel hoverable">
                         <div class="card-image waves-effect waves-block waves-light">
+
                             <img class="activator" src="{{ moviesBeingDisplayed.imageUrl }}">
                         </div>
-                        <div class="card-content">
-                            <span class="card-title  grey-text text-darken-4">{{ moviesBeingDisplayed.title }}</span>
+                            <div class="card-content">
+                                <h4>{{ moviesBeingDisplayed.title }}</h4>
+                            </div>
+                            <span class="card-title grey-text text-darken-4"></span>
+                            <p><button class="blue-text text-darken-2 btn-flat waves-effect waves-teal activator">
+                                    <h6>Movie Description</h6>
+                                </button>
+                            </p>
+                        
 
-                            <button class="btn waves-effect waves-light activator pulse" type="submit">Movie Description<i class="material-icons left">local_movies</i>
-                            </button>
 
-                            <!-- THIS IS WHAT DISPLAYS AFTER DESCRIPTION BUTTON IS CLICKED -->
-
-                        </div>
+                        <!-- THIS IS WHAT DISPLAYS AFTER DESCRIPTION BUTTON IS CLICKED -->
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">{{ moviesBeingDisplayed.title }}<i
-                                    class="material-icons right">close</i></span>
-                            <p>{{ moviesBeingDisplayed.description }}
+
+                            <span class="card-title grey-text text-darken-4">
+                                <h3>{{ moviesBeingDisplayed.title }}</h3><i class="material-icons right">close</i>
+                            </span>
+                            <p class="flow-text">{{ moviesBeingDisplayed.description }}
                             </p>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

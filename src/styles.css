@@ -1,9 +1,24 @@
 .navbar {
     margin-bottom: 50px;
     text-emphasis: bolder;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    
 }
 
 .btn {
     margin: 20px;
+}
+
+body {
+    background-image: url("https://images.pexels.com/photos/390089/film-movie-motion-picture-390089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	
+
 }

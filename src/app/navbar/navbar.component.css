@@ -1,2 +1,9 @@
-.navbar {font-family: 'Faster One', cursive;
+.navbar {font-family: 'Broadway', cursive;
+    height: 100px;
+    background-color: rgb(172, 156, 135)
 }
+
+h2 {
+    padding-top: 20px;
+}
+
